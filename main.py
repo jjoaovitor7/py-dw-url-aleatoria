@@ -3,7 +3,7 @@ import random
 
 janela = Tk()
 janela.title("Deep Web Link Aleatório")
-janela.geometry("350x100")
+janela.geometry("280x100")
 janela.configure(bg="black")
 
 titulo = Label(janela, text="Deep Web Link Aleatório", font=("Comic Sans MS", "10", "bold", "italic"))
