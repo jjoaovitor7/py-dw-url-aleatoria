@@ -14,15 +14,16 @@ menubar.add_cascade(label='Temas', menu=opcaomenu1)
 def mostrarLinks():
          janelaURL = Tk()
          janelaURL.title('Links')
-         url1 = Label(janelaURL, text="Facebook - facebookcorewwwi.onion", font=("Comic Sans MS", "10"))
+         
+         url1 = Label(janelaURL, text="DuckDuckGo - 3g2upl4pq6kufc4m.onion", font=("Comic Sans MS", "10"))
          url2 = Label(janelaURL, text="notEvil - hss3uro2hsxfogfq.onion", font=("Comic Sans MS", "10"))
-         url3 = Label(janelaURL, text="The Chess - theches3nacocgsc.onion", font=("Comic Sans MS", "10"))
-         url4 = Label(janelaURL, text="Internet Archive - archivecrfip2lpi.onion", font=("Comic Sans MS", "10"))
-         url5 = Label(janelaURL, text="DuckDuckGo - 3g2upl4pq6kufc4m.onion", font=("Comic Sans MS", "10"))
-         url6 = Label(janelaURL, text="TorPaste - 5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", font=("Comic Sans MS", "10"))
+         url3 = Label(janelaURL, text="Torch - xmh57jrzrnw6insl.onion", font=("Comic Sans MS", "10"))
+         url4 = Label(janelaURL, text="The Chess - theches3nacocgsc.onion", font=("Comic Sans MS", "10"))
+         url5 = Label(janelaURL, text="Facebook - facebookcorewwwi.onion", font=("Comic Sans MS", "10"))
+         url6 = Label(janelaURL, text="Internet Archive - archivecrfip2lpi.onion", font=("Comic Sans MS", "10"))
          url7 = Label(janelaURL, text="Bible4u - bible4u2kjgjvbxs.onion", font=("Comic Sans MS", "10"))
-         url8 = Label(janelaURL, text="Torch - xmh57jrzrnw6insl.onion", font=("Comic Sans MS", "10"))
-                                                                          
+         url8 = Label(janelaURL, text="TorPaste - 5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", font=("Comic Sans MS", "10"))
+   
          url1.grid(column=0, row=0)
          url2.grid(column=0, row=1)
          url3.grid(column=0, row=3)
