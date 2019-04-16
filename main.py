@@ -20,7 +20,7 @@ url.grid(column=0, row=2)
 url.configure(bg="black", fg ="#00ff00")
 
 def clicado():
-        sitesDW = ["Facebook - https://www.facebookcorewwwi.onion", "notEvil - https://hss3uro2hsxfogfq.onion"]
+        sitesDW = ["Facebook - https://www.facebookcorewwwi.onion", "notEvil - https://hss3uro2hsxfogfq.onion", "The Chess - http://theches3nacocgsc.onion"]
         siteDW = random.choice(sitesDW)
         url.configure(text=siteDW)
         
