@@ -44,6 +44,21 @@ opcaomenu2 = Menu(menubar)
 menubar.add_cascade(label='Links', menu=opcaomenu2)
 opcaomenu2.add_command(label='Mostrar Links', command=mostrarLinks)
 
+def ajudaNavegadores():
+
+    janelaNavegadores = Tk()
+    janelaNavegadores.title('Navegadores')
+
+    redeOnion = Label(janelaNavegadores, text="Rede onion: https://www.torproject.org/download/", font=("Comic Sans MS", "10"))
+    redeI2P = Label(janelaNavegadores, text="Rede i2p: https://geti2p.net/pt-br/download", font=("Comic Sans MS", "10"))
+
+    redeOnion.grid(column=0, row=0)
+    redeI2P.grid(column=0, row=1)
+    
+opcaomenu3 = Menu(menubar)
+menubar.add_cascade(label='Ajuda', menu=opcaomenu3)
+opcaomenu3.add_command(label='Navegadores', command=ajudaNavegadores)
+
 titulo = Label(janela, text="Deep Web Link Aleatório", font=("Comic Sans MS", "10", "bold", "italic"))
 titulo.grid(column=0, row=0, sticky=W)
 titulo.configure(bg="black", fg="#00ff00")
