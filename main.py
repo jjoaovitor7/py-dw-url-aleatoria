@@ -6,6 +6,8 @@ janela.title("Deep Web Link Aleatório")
 janela.geometry("280x100")
 janela.configure(bg="black")
 
+fonte1 = ("Comic Sans MS", "10")
+
 menubar = Menu(janela)
 janela.config(menu=menubar)
 opcaomenu1 = Menu(menubar)
@@ -16,17 +18,17 @@ def mostrarLinks():
          janelaURL = Tk()
          janelaURL.title('Links')
          
-         url1 = Label(janelaURL, text="DuckDuckGo - 3g2upl4pq6kufc4m.onion", font=("Comic Sans MS", "10"))
-         url2 = Label(janelaURL, text="notEvil - hss3uro2hsxfogfq.onion", font=("Comic Sans MS", "10"))
-         url3 = Label(janelaURL, text="Torch - xmh57jrzrnw6insl.onion", font=("Comic Sans MS", "10"))
-         url4 = Label(janelaURL, text="The Chess - theches3nacocgsc.onion", font=("Comic Sans MS", "10"))
-         url5 = Label(janelaURL, text="Enot - enotegggr635n4lw.onion", font=("Comic Sans MS", "10"))         
-         url6 = Label(janelaURL, text="Internet Archive - archivecrfip2lpi.onion", font=("Comic Sans MS", "10"))
-         url7 = Label(janelaURL, text="Bible4u - bible4u2kjgjvbxs.onion", font=("Comic Sans MS", "10"))
-         url8 = Label(janelaURL, text="TorPaste - 5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", font=("Comic Sans MS", "10"))
-         url9 = Label(janelaURL, text="Facebook - facebookcorewwwi.onion", font=("Comic Sans MS", "10"))
-         url10 = Label(janelaURL, text="Example Rendezvous Points Page - duskgytldkxiuqc6.onion", font=("Comic Sans MS", "10"))
-         url11 = Label(janelaURL, text="Web Shell Archive - z2huz7tsxluvnxoc.onion", font=("Comic Sans MS", "10"))
+         url1 = Label(janelaURL, text="DuckDuckGo - 3g2upl4pq6kufc4m.onion", font=fonte1)
+         url2 = Label(janelaURL, text="notEvil - hss3uro2hsxfogfq.onion", font=fonte1)
+         url3 = Label(janelaURL, text="Torch - xmh57jrzrnw6insl.onion", font=fonte1)
+         url4 = Label(janelaURL, text="The Chess - theches3nacocgsc.onion", font=fonte1)
+         url5 = Label(janelaURL, text="Enot - enotegggr635n4lw.onion", font=fonte1)       
+         url6 = Label(janelaURL, text="Internet Archive - archivecrfip2lpi.onion", font=fonte1)
+         url7 = Label(janelaURL, text="Bible4u - bible4u2kjgjvbxs.onion", font=fonte1)
+         url8 = Label(janelaURL, text="TorPaste - 5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", font=fonte1)
+         url9 = Label(janelaURL, text="Facebook - facebookcorewwwi.onion", font=fonte1)
+         url10 = Label(janelaURL, text="Example Rendezvous Points Page - duskgytldkxiuqc6.onion", font=fonte1)
+         url11 = Label(janelaURL, text="Web Shell Archive - z2huz7tsxluvnxoc.onion", font=fonte1)
                                                                              
          url1.grid(column=0, row=0)
          url2.grid(column=0, row=1)
@@ -49,8 +51,8 @@ def ajudaNavegadores():
     janelaNavegadores = Tk()
     janelaNavegadores.title('Navegadores')
 
-    redeOnion = Label(janelaNavegadores, text="Rede onion: https://www.torproject.org/download/", font=("Comic Sans MS", "10"))
-    redeI2P = Label(janelaNavegadores, text="Rede i2p: https://geti2p.net/pt-br/download", font=("Comic Sans MS", "10"))
+    redeOnion = Label(janelaNavegadores, text="Rede onion: https://www.torproject.org/download/", font=fonte1)
+    redeI2P = Label(janelaNavegadores, text="Rede i2p: https://geti2p.net/pt-br/download", font=fonte1)
 
     redeOnion.grid(column=0, row=0)
     redeI2P.grid(column=0, row=1)
@@ -59,15 +61,15 @@ opcaomenu3 = Menu(menubar)
 menubar.add_cascade(label='Ajuda', menu=opcaomenu3)
 opcaomenu3.add_command(label='Navegadores', command=ajudaNavegadores)
 
-titulo = Label(janela, text="Deep Web Link Aleatório", font=("Comic Sans MS", "10", "bold", "italic"))
+titulo = Label(janela, text="Deep Web Link Aleatório", font=("Comic Sans MS", "10", "bold"))
 titulo.grid(column=0, row=0, sticky=W)
 titulo.configure(bg="black", fg="#00ff00")
 
-url = Label(janela, text="URL", font=("Comic Sans MS", "9"))
+url = Label(janela, text="URL", font=fonte1)
 url.grid(column=0, row=2)
 url.configure(bg="black", fg ="#00ff00")
 
-def clicado():
+def botaoGoClicado():
          
         sitesDW = ["Facebook - facebookcorewwwi.onion", "notEvil - hss3uro2hsxfogfq.onion", "The Chess - theches3nacocgsc.onion", 
                    "Internet Archive - archivecrfip2lpi.onion", "DuckDuckGo - 3g2upl4pq6kufc4m.onion", "TorPaste - 5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", 
@@ -76,7 +78,7 @@ def clicado():
         siteDW = random.choice(sitesDW)
         url.configure(text=siteDW)
         
-siteBotao = Button(janela, text="Go!", command=clicado)
+siteBotao = Button(janela, text="Go!", command=botaoGoClicado)
 siteBotao.grid(column=0, row=4)
 siteBotao.configure(bg="black", fg="#00ff00")
 
