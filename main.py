@@ -13,10 +13,10 @@ janela.config(menu=menubar)
 opcaomenu1 = Menu(menubar)
 menubar.add_cascade(label='Temas', menu=opcaomenu1)
 
-def mostrarLinks():
+def mostrarURLs():
          
          janelaURL = Tk()
-         janelaURL.title('Links')
+         janelaURL.title('URLs')
          
          urlsDoPrograma = ["notEvil - hss3uro2hsxfogfq.onion", "The Chess - theches3nacocgsc.onion", "Torch - xmh57jrzrnw6insl.onion",
                    "Internet Archive - archivecrfip2lpi.onion", "DuckDuckGo - 3g2upl4pq6kufc4m.onion", "Web Shell Archive - z2huz7tsxluvnxoc.onion",
@@ -28,10 +28,6 @@ def mostrarLinks():
              urlPrograma = Label(janelaURL, text=url, font=fonte1)
              urlPrograma.grid(column=0, row=x)
              x+=1
-                                                                             
-opcaomenu2 = Menu(menubar)
-menubar.add_cascade(label='Links', menu=opcaomenu2)
-opcaomenu2.add_command(label='Mostrar Links', command=mostrarLinks)
 
 def ajudaNavegadores():
 
@@ -44,9 +40,10 @@ def ajudaNavegadores():
     redeOnion.grid(column=0, row=0)
     redeI2P.grid(column=0, row=1)
     
-opcaomenu3 = Menu(menubar)
-menubar.add_cascade(label='Ajuda', menu=opcaomenu3)
-opcaomenu3.add_command(label='Navegadores', command=ajudaNavegadores)
+opcaomenu2 = Menu(menubar)
+menubar.add_cascade(label='Ajuda', menu=opcaomenu2)
+opcaomenu2.add_command(label='URLs', command=mostrarURLs)
+opcaomenu2.add_command(label='Navegadores', command=ajudaNavegadores)
 
 titulo = Label(janela, text="Deep Web Link Aleatório", font=("Comic Sans MS", "10", "bold"))
 titulo.grid(column=0, row=0, sticky=W)
