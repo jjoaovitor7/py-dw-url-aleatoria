@@ -1,6 +1,7 @@
 from tkinter import *
 import random
 from mostrarURLs import *
+from ajudaNavegadores import *
 
 janela = Tk()
 janela.title("Deep Web Link Aleatório")
@@ -13,17 +14,6 @@ menubar = Menu(janela)
 janela.config(menu=menubar)
 opcaomenu1 = Menu(menubar)
 menubar.add_cascade(label='Temas', menu=opcaomenu1)
-
-def ajudaNavegadores():
-
-    janelaNavegadores = Tk()
-    janelaNavegadores.title('Navegadores')
-
-    redeOnion = Label(janelaNavegadores, text="Rede onion: https://www.torproject.org/download/", font=fonte1)
-    redeI2P = Label(janelaNavegadores, text="Rede i2p: https://geti2p.net/pt-br/download", font=fonte1)
-
-    redeOnion.grid(column=0, row=0)
-    redeI2P.grid(column=0, row=1)
     
 opcaomenu2 = Menu(menubar)
 menubar.add_cascade(label='Ajuda', menu=opcaomenu2)
