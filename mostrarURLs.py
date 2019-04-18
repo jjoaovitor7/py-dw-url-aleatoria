@@ -1,3 +1,6 @@
+from tkinter import *
+fonte1 = ("Comic Sans MS", "10")
+
 def mostrarURLs():
          
          janelaURL = Tk()
