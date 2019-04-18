@@ -1,5 +1,4 @@
 from tkinter import *
-fonte1 = ("Comic Sans MS", "10")
 
 def mostrarURLs():
          
@@ -13,6 +12,6 @@ def mostrarURLs():
 
          x=0
          for url in urlsDoPrograma:
-             urlPrograma = Label(janelaURL, text=url, font=fonte1)
+             urlPrograma = Label(janelaURL, text=url, font=("Times New Roman", "11"))
              urlPrograma.grid(column=0, row=x)
              x+=1
