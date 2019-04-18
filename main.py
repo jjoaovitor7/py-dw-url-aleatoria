@@ -5,6 +5,7 @@ from ajudaNavegadores import *
 
 janela = Tk()
 janela.title("Deep Web Link Aleatório")
+janela.wm_iconbitmap("dw_ico.ico")
 janela.geometry("280x100")
 janela.configure(bg="black")
 
