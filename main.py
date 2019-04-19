@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+import webbrowser
 from mostrarURLs import *
 from ajudaNavegadores import *
 
@@ -31,12 +32,15 @@ url.configure(bg="black", fg ="#00ff00")
 
 def botaoGoClicado():
          
-        sitesDW = ["Facebook - facebookcorewwwi.onion", "notEvil - hss3uro2hsxfogfq.onion", "The Chess - theches3nacocgsc.onion", 
-                   "Internet Archive - archivecrfip2lpi.onion", "DuckDuckGo - 3g2upl4pq6kufc4m.onion", "TorPaste - 5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", 
-                   "Bible4u - bible4u2kjgjvbxs.onion/", "Torch - xmh57jrzrnw6insl.onion", "Enot - enotegggr635n4lw.onion", "The New York Times - nytimes3xbfgragh.onion",
-                   "Example Rendezvous Points Page - duskgytldkxiuqc6.onion", "Web Shell Archive - z2huz7tsxluvnxoc.onion"]
+        sitesDW = ["facebookcorewwwi.onion", "hss3uro2hsxfogfq.onion", "theches3nacocgsc.onion", 
+                   "archivecrfip2lpi.onion", "3g2upl4pq6kufc4m.onion", "5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", 
+                   "bible4u2kjgjvbxs.onion/", "xmh57jrzrnw6insl.onion", "enotegggr635n4lw.onion", "nytimes3xbfgragh.onion",
+                   "duskgytldkxiuqc6.onion", "z2huz7tsxluvnxoc.onion"]
         siteDW = random.choice(sitesDW)
+        def clicarLink(event):
+                webbrowser.open_new(siteDW)
         url.configure(text=siteDW)
+        url.bind("<Button-1>", clicarLink)
         
 siteBotao = Button(janela, text="Go!", command=botaoGoClicado)
 siteBotao.grid(column=0, row=4)
