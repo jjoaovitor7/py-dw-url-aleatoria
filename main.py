@@ -31,10 +31,10 @@ url.grid(column=0, row=2)
 url.configure(bg="black", fg ="#00ff00")
 
 def botaoGoClicado():        
-        sitesDW = ["facebookcorewwwi.onion", "hss3uro2hsxfogfq.onion", "theches3nacocgsc.onion", 
+        sitesDW = ["facebookcorewwwi.onion", "hss3uro2hsxfogfq.onion", "theches3nacocgsc.onion", "qtx6d2ggmma6hgio.onion" 
                    "archivecrfip2lpi.onion", "3g2upl4pq6kufc4m.onion", "5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", 
-                   "bible4u2kjgjvbxs.onion/", "xmh57jrzrnw6insl.onion", "enotegggr635n4lw.onion", "nytimes3xbfgragh.onion",
-                   "duskgytldkxiuqc6.onion", "z2huz7tsxluvnxoc.onion"]
+                   "bible4u2kjgjvbxs.onion", "xmh57jrzrnw6insl.onion", "enotegggr635n4lw.onion", "nytimes3xbfgragh.onion",
+                   "duskgytldkxiuqc6.onion", "z2huz7tsxluvnxoc.onion", "gnvweaoe2xzjqldu.onion"]
         siteDW = random.choice(sitesDW)
         def clicarLink(event):
                 webbrowser.open_new(siteDW)
