@@ -30,8 +30,7 @@ url = Label(janela, text="URL", font=fonte1)
 url.grid(column=0, row=2)
 url.configure(bg="black", fg ="#00ff00")
 
-def botaoGoClicado():
-         
+def botaoGoClicado():        
         sitesDW = ["facebookcorewwwi.onion", "hss3uro2hsxfogfq.onion", "theches3nacocgsc.onion", 
                    "archivecrfip2lpi.onion", "3g2upl4pq6kufc4m.onion", "5y5ek6tlzttcxgvlknf5mxybbsntfqsq2q2fngdbfmskgghukfkn5uqd.onion", 
                    "bible4u2kjgjvbxs.onion/", "xmh57jrzrnw6insl.onion", "enotegggr635n4lw.onion", "nytimes3xbfgragh.onion",
@@ -46,15 +45,13 @@ siteBotao = Button(janela, text="Go!", command=botaoGoClicado)
 siteBotao.grid(column=0, row=4)
 siteBotao.configure(bg="black", fg="#00ff00")
 
-def TemaBranco():
-         
+def TemaBranco():        
         janela.configure(bg="white")
         titulo.configure(bg="white", fg="black")
         url.configure(bg="white", fg="black")
         siteBotao.configure(bg="white", fg="black")
 
-def TemaPreto():
-         
+def TemaPreto():      
         janela.configure(bg="black")
         titulo.configure(bg="black", fg="#00ff00")
         url.configure(bg="black", fg="#00ff00")
