@@ -19,7 +19,7 @@ menubar.add_cascade(label='Temas', menu=temas)
 ajuda = Menu(menubar)
 menubar.add_cascade(label='Ajuda', menu=ajuda)
 ajuda.add_command(label='URLs', command=mostrar_urls)
-ajuda.add_command(label='Navegadores', command=ajudaNavegadores)
+ajuda.add_command(label='Navegadores', command=ajuda_navegadores)
 
 titulo=Label(janela, text='Deep Web Link Aleatório', font=('Comic Sans MS', '10', 'bold'))
 titulo.grid(column=0, row=0, sticky=N)
