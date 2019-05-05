@@ -6,7 +6,6 @@ from ajudaNavegadores import *
 janela=Tk()
 janela.title('Deep Web Link Aleatório')
 janela.wm_iconbitmap('dw_ico.ico')
-janela.geometry('300x100')
 janela.configure(bg='black')
 
 menubar=Menu(janela)
@@ -45,19 +44,19 @@ siteBotao=Button(janela, text='Go!', command=botao_go_clicado)
 siteBotao.grid(column=0, row=4)
 siteBotao.configure(bg='black', fg='#00ff00')
 
-def TemaBranco():        
+def tema_branco():        
         janela.configure(bg='white')
         titulo.configure(bg='white', fg='black')
         url.configure(bg='white', fg='black')
         siteBotao.configure(bg='white', fg='black')
 
-def TemaPreto():      
+def tema_preto():      
         janela.configure(bg='black')
         titulo.configure(bg='black', fg='#00ff00')
         url.configure(bg='black', fg='#00ff00')
         siteBotao.configure(bg='black', fg='#00ff00')
 
-temas.add_command(label='Tema Branco', command=TemaBranco)
-temas.add_command(label='Tema Preto', command=TemaPreto)
+temas.add_command(label='Tema Branco', command=tema_branco)
+temas.add_command(label='Tema Preto', command=tema_preto)
 
 janela.mainloop()
