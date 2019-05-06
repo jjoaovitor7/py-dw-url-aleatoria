@@ -49,11 +49,12 @@ def botao_go_clicado():
         SELECT url FROM urls  ORDER BY RANDOM() LIMIT 1;
         """)
         url_=cursor.fetchall()
+        url2_=str(url_).strip('()[],\'\'')
         lURL.configure(text=url_)
         conn.close()
-        #def clicar_url(event):
-                #webbrowser.open_new(url_) #erro
-        #url.bind('<Button-1>', clicar_url)
+        def clicar_url(event):
+                webbrowser.open_new(url2_)
+        lURL.bind('<Button-1>', clicar_url)
         
 botao_go=Button(janela, text='Go!', command=botao_go_clicado)
 botao_go.grid(column=0, row=4)
