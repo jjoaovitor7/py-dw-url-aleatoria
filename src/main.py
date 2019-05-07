@@ -38,7 +38,7 @@ lTitulo=Label(janela, text='Deep Web Link Aleatório', font=('Comic Sans MS', '1
 lTitulo.grid(column=0, row=0, sticky=N)
 lTitulo.configure(bg='black', fg='#00ff00')
 
-lURL=Label(janela, text="URL", font=('Comic Sans MS', '10'))
+lURL=Label(janela, text='URL', font=('Comic Sans MS', '10'))
 lURL.grid(column=0, row=2)
 lURL.configure(bg='black', fg ='#00ff00')
 
