@@ -5,7 +5,7 @@ fonte=('Times New Roman', '10')
 def ajuda_redes():
     jRedes=Toplevel()
     jRedes.title('Redes')
-    jRedes.wm_iconbitmap('dw_ico.ico')
+    jRedes.wm_iconbitmap('ico\dw_ico.ico')
     
     jRedes.configure(bg='black')
     
