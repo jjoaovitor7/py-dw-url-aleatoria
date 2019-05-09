@@ -34,3 +34,7 @@ def ajuda_redes():
     lI2p.grid(column=0, 
               row=1, 
               sticky=W)
+    
+    lFreenet.grid(column=0, 
+                  row=2, 
+                  sticky=W)
