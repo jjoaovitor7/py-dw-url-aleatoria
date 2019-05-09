@@ -4,7 +4,7 @@ import sqlite3
 def mostrar_urls():
          jURL=Toplevel()
          jURL.title('URLs')
-         jURL.wm_iconbitmap('dw_ico.ico')
+         jURL.wm_iconbitmap('ico\dw_ico.ico')
          jURL.configure(bg='black')
 
          conn=sqlite3.connect('urls.db')
