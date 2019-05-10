@@ -34,7 +34,7 @@ menubar.add_cascade(label='Ajuda', menu=ajuda)
 ajuda.add_command(label='URLs', command=mostrar_urls)
 ajuda.add_command(label='Redes', command=ajuda_redes)
 
-lTitulo=Label(jMain, text='Deep Web Link Aleatório', font=('Comic Sans MS', '10', 'bold'))
+lTitulo=Label(jMain, text='Deep Web URL Aleatório', font=('Comic Sans MS', '10', 'bold'))
 lTitulo.grid(column=0, row=0, sticky=N)
 lTitulo.configure(bg='black', fg='#00ff00')
 
