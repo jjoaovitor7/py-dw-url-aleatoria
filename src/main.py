@@ -4,7 +4,7 @@ from mostrar_urls import *
 from ajuda_redes import *
 
 jMain=Tk()
-jMain.title('Deep Web Link Aleatório')
+jMain.title('Deep Web URL Aleatório')
 jMain.wm_iconbitmap('ico\dw_ico.ico')
 jMain.configure(bg='black')
 
