@@ -1,14 +1,10 @@
 from tkinter import *
-import sqlite3, platform
+import sqlite3
 
 def mostrar_urls():
-         so=platform.system()
          jURL=Toplevel()
          jURL.title('URLs')
-         if so=='Windows':
-                 jURL.wm_iconbitmap('ico\dw_ico.ico')
-         if so=='Linux':
-                 jURL.wm_iconbitmap('@ico/dw_ico.xbm')
+         jURL.wm_iconbitmap('ico\dw_ico.ico')
          jURL.configure(bg='black')
 
          conn=sqlite3.connect('urls.db')

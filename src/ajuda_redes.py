@@ -1,16 +1,12 @@
 from tkinter import *
-import platform
 
-fonte=('Times New Roman', '11')
+fonte=('Times New Roman', '10')
 
 def ajuda_redes():
-    so=platform.system()
     jRedes=Toplevel()
     jRedes.title('Redes')
-    if so=='Windows':
-            jRedes.wm_iconbitmap('ico\dw_ico.ico')
-    if so=='Linux':
-            jRedes.wm_iconbitmap('@ico/dw_ico.xbm')    
+    jRedes.wm_iconbitmap('ico\dw_ico.ico')
+    
     jRedes.configure(bg='black')
     
     lOnion=Label(jRedes, text='Onion: https://www.torproject.org/download/', font=fonte)
