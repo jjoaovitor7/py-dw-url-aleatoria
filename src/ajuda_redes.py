@@ -1,7 +1,7 @@
 from tkinter import *
 import platform
 
-fonte=('Times New Roman', '10')
+fonte=('Times New Roman', '11')
 
 def ajuda_redes():
     so=platform.system()
