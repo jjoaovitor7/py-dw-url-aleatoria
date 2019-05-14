@@ -5,7 +5,6 @@ fonte=('Times New Roman', '10')
 
 def ajuda_redes():
     so=platform.system()
-    
     jRedes=Toplevel()
     jRedes.title('Redes')
     if so=='Windows':
