@@ -1,11 +1,16 @@
 from tkinter import *
-import random, webbrowser
+import random, webbrowser, platform
 from mostrar_urls import *
 from ajuda_redes import *
 
+so=platform.system()
+
 jMain=Tk()
 jMain.title('Deep Web URL Aleatório')
-jMain.wm_iconbitmap('ico\dw_ico.ico')
+if so=='Windows':
+        jMain.wm_iconbitmap('ico\dw_ico.ico')
+if so=='Linux':
+        jMain.wm_iconbitmap('@ico/dw_ico.xbm')
 jMain.configure(bg='black')
 
 menubar=Menu(jMain)
