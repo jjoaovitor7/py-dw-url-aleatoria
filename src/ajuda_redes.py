@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
+from mostrar_urls import *
 import platform, sqlite3
 
 fonte=('Times New Roman', '11')
@@ -13,6 +14,13 @@ def ajuda_redes():
     if so=='Linux':
             jRedes.wm_iconbitmap('@ico/dw_ico.xbm')    
     jRedes.configure(bg='black')
+    
+    menubar=Menu(jRedes)
+    jRedes.config(menu=menubar)
+    
+    ajuda=Menu(menubar, tearoff=0)
+    menubar.add_cascade(label='Ajuda', menu=ajuda)
+    ajuda.add_command(label='URLs', command=mostrar_urls)
     
     lOnion=Label(jRedes, text='Onion: https://www.torproject.org/download/', font=fonte)
     lI2p=Label(jRedes, text='i2p: https://geti2p.net/pt-br/download', font=fonte)
