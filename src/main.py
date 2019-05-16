@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
-import platform, webbrowser
+import platform, sqlite3, webbrowser
 from mostrar_urls import *
 from ajuda_redes import *
 
