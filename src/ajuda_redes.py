@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
-from mostrar_urls import *
 import platform, sqlite3
+from mostrar_urls import *
 
 fonte=('Times New Roman', '11')
 
