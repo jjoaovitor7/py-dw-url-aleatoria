@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
-import platform
+import platform, sqlite3
 
 fonte=('Times New Roman', '11')
 
