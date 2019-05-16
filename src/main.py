@@ -17,7 +17,7 @@ def main():
         menubar=Menu(jMain)
         jMain.config(menu=menubar)
 
-        temas=Menu(menubar)
+        temas=Menu(menubar, tearoff=0)
         menubar.add_cascade(label='Temas', menu=temas)
 
         def tema_branco():        
@@ -35,7 +35,7 @@ def main():
         temas.add_command(label='Tema Branco', command=tema_branco)
         temas.add_command(label='Tema Preto', command=tema_preto)
 
-        ajuda=Menu(menubar)
+        ajuda=Menu(menubar, tearoff=0)
         menubar.add_cascade(label='Ajuda', menu=ajuda)
         ajuda.add_command(label='URLs', command=mostrar_urls)
         ajuda.add_command(label='Redes', command=ajuda_redes)
