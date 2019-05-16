@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
 import sqlite3, platform
+from ajuda_redes import *
 
 def mostrar_urls():
          so=platform.system()
@@ -11,6 +12,13 @@ def mostrar_urls():
          if so=='Linux':
                  jURL.wm_iconbitmap('@ico/dw_ico.xbm')
          jURL.configure(bg='black')
+         
+         menubar=Menu(jURL)
+         jURL.config(menu=menubar)
+         
+         ajuda=Menu(menubar, tearoff=0)
+         menubar.add_cascade(label='Ajuda', menu=ajuda)
+         ajuda.add_command(label='Redes', command=ajuda_redes)
 
          conn=sqlite3.connect('urls.db')
          cursor=conn.cursor()
