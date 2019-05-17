@@ -7,7 +7,7 @@ from mostrar_urls import mostrar_urls
 def ajuda_redes():
     jRedes = Toplevel()
     jRedes.title('Redes')
-    jRedes.configure(bg='black')
+    jRedes.configure(bg = 'black')
 
     so = platform.system()
     if so == 'Linux':
