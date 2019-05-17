@@ -47,7 +47,7 @@ def main():
     temas.add_command(label = 'Tema Branco', command = tema_branco)
     temas.add_command(label = 'Tema Preto', command = tema_preto)
     
-    fonte = ('Comic Sans MS', '10'))
+    fonte = ('Comic Sans MS', '10')
     lURL = Label(jMain, text = 'URL', font = fonte)
     lURL.grid(column = 0, row = 2)
     lURL.configure(bg = 'black', fg = '#00ff00')
