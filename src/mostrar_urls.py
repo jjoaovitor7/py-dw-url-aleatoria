@@ -2,7 +2,7 @@
 from tkinter import *
 import platform
 import sqlite3
-from ajuda_redes import ajuda_redes
+import ajuda_redes
 
 def mostrar_urls():
     jURL = Toplevel()
@@ -20,7 +20,7 @@ def mostrar_urls():
      
     ajuda = Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'Redes', command = ajuda_redes)
+    ajuda.add_command(label = 'Redes', command = ajuda_redes.ajuda_redes)
 
     conn = sqlite3.connect('urls.db')
     cursor = conn.cursor()
