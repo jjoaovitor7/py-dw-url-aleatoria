@@ -3,8 +3,8 @@ from tkinter import *
 import platform
 import sqlite3
 import webbrowser
-import mostrar_urls
-import ajuda_redes
+from mostrar_urls import mostrar_urls
+from ajuda_redes import ajuda_redes
 
 def main():
     jMain = Tk()
@@ -25,8 +25,8 @@ def main():
 
     ajuda = Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'URLs', command = mostrar_urls.mostrar_urls)
-    ajuda.add_command(label = 'Redes', command = ajuda_redes.ajuda_redes)
+    ajuda.add_command(label = 'URLs', command = mostrar_urls)
+    ajuda.add_command(label = 'Redes', command = ajuda_redes)
 
     lTitulo = Label(jMain, text = 'Deep Web URL Aleatório', font = ('Comic Sans MS', '10', 'bold'))
     lTitulo.grid(column = 0, row = 0, sticky = N)
