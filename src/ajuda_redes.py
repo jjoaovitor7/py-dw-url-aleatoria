@@ -2,7 +2,7 @@
 from tkinter import *
 import platform
 import sqlite3
-from mostrar_urls import mostrar_urls
+import mostrar_urls
 
 def ajuda_redes():
     jRedes = Toplevel()
@@ -20,7 +20,7 @@ def ajuda_redes():
     
     ajuda = Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'URLs', command = mostrar_urls)
+    ajuda.add_command(label = 'URLs', command = mostrar_urls.mostrar_urls)
     
     fonte = ('Times New Roman', '11')
     lOnion = Label(jRedes, text = 'Onion: https://www.torproject.org/download/', font = fonte)
