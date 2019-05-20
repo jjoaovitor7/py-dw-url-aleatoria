@@ -12,11 +12,17 @@ def main():
     jMain.configure(bg = 'black')
     
     so = platform.system()
-    if so == 'Linux':
-       jMain.wm_iconbitmap('@ico/dw_ico.xbm')
-    if so == 'Windows':
-       jMain.wm_iconbitmap('ico\dw_ico.ico')
-
+    try:
+        if so == 'Linux':
+           jMain.wm_iconbitmap('@ico/dw_ico.xbm')
+    except TclError:
+        print('dw_ico.xbm não foi encontrado na pasta ico.')
+    try:
+        if so == 'Windows':
+           jMain.wm_iconbitmap('ico\dw_ico.ico na pasta ico')
+    except TclError:
+        print('dw_ico.ico não foi encontrado.')
+        
     menubar = Menu(jMain)
     jMain.config(menu = menubar)
 
