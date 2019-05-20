@@ -10,10 +10,16 @@ def mostrar_urls():
     jURL.configure(bg = 'black')
 
     so = platform.system()
-    if so == 'Linux':
-       jURL.wm_iconbitmap('@ico/dw_ico.xbm')
-    if so == 'Windows':
-       jURL.wm_iconbitmap('ico\dw_ico.ico')
+    try:
+        if so == 'Linux':
+           jURL.wm_iconbitmap('@ico/dw_ico.xbm')
+    except TclError:
+        print('dw_ico.xbm não foi encontrado.')
+    try:
+        if so == 'Windows':
+           jURL.wm_iconbitmap('ico\dw_ico.ico')
+    except TclError:
+        print('dw_ico.ico não foi encontrado.')
     
     menubar = Menu(jURL)
     jURL.config(menu = menubar)
