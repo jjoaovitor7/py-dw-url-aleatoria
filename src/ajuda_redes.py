@@ -10,11 +10,17 @@ def ajuda_redes():
     jRedes.configure(bg = 'black')
 
     so = platform.system()
-    if so == 'Linux':
-            jRedes.wm_iconbitmap('@ico/dw_ico.xbm')    
-    if so == 'Windows':
-            jRedes.wm_iconbitmap('ico\dw_ico.ico')
-    
+    try:
+        if so == 'Linux':
+           jRedes.wm_iconbitmap('@ico/dw_ico.xbm')
+    except TclError:
+        print('dw_ico.xbm não foi encontrado na pasta ico.')
+    try:
+        if so == 'Windows':
+           jRedes.wm_iconbitmap('ico\dw_ico.ico')
+    except TclError:
+        print('dw_ico.ico não foi encontrado na pasta ico.')
+        
     menubar = Menu(jRedes)
     jRedes.config(menu = menubar)
     
