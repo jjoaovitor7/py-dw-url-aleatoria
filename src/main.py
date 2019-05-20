@@ -19,9 +19,9 @@ def main():
         print('dw_ico.xbm não foi encontrado na pasta ico.')
     try:
         if so == 'Windows':
-           jMain.wm_iconbitmap('ico\dw_ico.ico na pasta ico')
+           jMain.wm_iconbitmap('ico\dw_ico.ico')
     except TclError:
-        print('dw_ico.ico não foi encontrado.')
+        print('dw_ico.ico não foi encontrado na pasta ico.')
         
     menubar = Menu(jMain)
     jMain.config(menu = menubar)
