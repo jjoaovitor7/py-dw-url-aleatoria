@@ -2,6 +2,7 @@
 from tkinter import *
 import platform
 import sqlite3
+import main
 import ajuda_redes
 
 def mostrar_urls():
@@ -22,6 +23,7 @@ def mostrar_urls():
         print('dw_ico.ico não foi encontrado na pasta ico.')
     
     menubar = Menu(jURL)
+    menubar.add_command(label = 'Início', command = main.main)    
     jURL.config(menu = menubar)
      
     ajuda = Menu(menubar, tearoff = 0)
