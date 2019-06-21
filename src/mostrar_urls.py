@@ -6,25 +6,25 @@ import main
 import ajuda_redes
 
 def mostrar_urls():
-    jURL = Toplevel()
-    jURL.title('URLs')
-    jURL.configure(bg = 'black')
+    wURL = Toplevel()
+    wURL.title('URLs')
+    wURL.configure(bg = 'black')
 
     so = platform.system()
     try:
         if so == 'Linux':
-           jURL.wm_iconbitmap('@ico/dw_ico.xbm')
+           wURL.wm_iconbitmap('@ico/dw_ico.xbm')
     except TclError:
         print('dw_ico.xbm não foi encontrado na pasta ico.')
     try:
         if so == 'Windows':
-           jURL.wm_iconbitmap('ico\dw_ico.ico')
+           wURL.wm_iconbitmap('ico\dw_ico.ico')
     except TclError:
         print('dw_ico.ico não foi encontrado na pasta ico.')
     
-    menubar = Menu(jURL)
+    menubar = Menu(wURL)
     menubar.add_command(label = 'Início', command = main.main)    
-    jURL.config(menu = menubar)
+    wURL.config(menu = menubar)
      
     ajuda = Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
@@ -37,9 +37,9 @@ def mostrar_urls():
     """)
     
     x = 0
-    fonte = ('Times New Roman', '11')
+    fonte = ('Times New Roman', '12')
     for url in cursor.fetchall():
-        lURL = Label(jURL, text = url, font = fonte)
+        lURL = Label(wURL, text = url, font = fonte)
         lURL.configure(bg = 'black', fg = '#00ff00')
         lURL.grid(column = 0, row = x, sticky = W)
         x += 1
