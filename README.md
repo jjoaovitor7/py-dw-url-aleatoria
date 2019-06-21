@@ -13,4 +13,4 @@
 
 **Se no programa ter URLs "ilegais" ou conteúdo impróprio (pornografia, gore, ...), avise-me (se possível).**
 
-***(If in the program has "illegal" URLs or inappropriate content (pornography, gore, ...), warn me (if possible).***
+***(If in the program has "illegal" URLs or inappropriate content (pornography, gore, ...), warn me (if possible)).***
