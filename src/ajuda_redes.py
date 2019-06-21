@@ -2,30 +2,41 @@
 from tkinter import *
 import platform
 import sqlite3
+import main
 import mostrar_urls
 
 def ajuda_redes():
-    jRedes = Toplevel()
-    jRedes.title('Redes')
-    jRedes.configure(bg = 'black')
+    wRedes = Toplevel()
+    wRedes.title('Redes')
+    wRedes.configure(bg = 'black')
 
     so = platform.system()
-    if so == 'Linux':
-            jRedes.wm_iconbitmap('@ico/dw_ico.xbm')    
-    if so == 'Windows':
-            jRedes.wm_iconbitmap('ico\dw_ico.ico')
-    
-    menubar = Menu(jRedes)
-    jRedes.config(menu = menubar)
+    try:
+        if so == 'Linux':
+           wRedes.wm_iconbitmap('@ico/dw_ico.xbm')
+    except TclError:
+        print('dw_ico.xbm não foi encontrado na pasta ico.')
+    try:
+        if so == 'Windows':
+           wRedes.wm_iconbitmap('ico\dw_ico.ico')
+    except TclError:
+        print('dw_ico.ico não foi encontrado na pasta ico.')
+        
+    menubar = Menu(wRedes)
+    menubar.add_command(label = 'Início', command = main.main)    
+    wRedes.config(menu = menubar)
     
     ajuda = Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
     ajuda.add_command(label = 'URLs', command = mostrar_urls.mostrar_urls)
     
-    fonte = ('Times New Roman', '11')
-    lOnion = Label(jRedes, text = 'Onion: https://www.torproject.org/download/', font = fonte)
-    lI2p = Label(jRedes, text = 'i2p: https://geti2p.net/pt-br/download', font = fonte)
-    lFreenet = Label(jRedes, text = 'Freenet: https://freenetproject.org/', font = fonte)
+    fonte = ('Times New Roman', '12')
+    lOnion = Label(wRedes, text = 'Onion: https://www.torproject.org/download/', 
+                   font = fonte)
+    lI2p = Label(wRedes, text = 'i2p: https://geti2p.net/pt-br/download', 
+                 font = fonte)
+    lFreenet = Label(wRedes, text = 'Freenet: https://freenetproject.org/', 
+                     font = fonte)
     
     lOnion.configure(bg = 'black', fg = '#00ff00')  
     lI2p.configure(bg = 'black', fg = '#00ff00')
