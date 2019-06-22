@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from tkinter import *
+import tkinter as tk
 import platform
 import sqlite3
 import definir_cor
@@ -7,7 +7,7 @@ import main
 import ajuda_redes
 
 def mostrar_urls():
-    wURL = Toplevel()
+    wURL = tk.Toplevel()
     wURL.title('URLs')
     wURL.configure(bg = definir_cor.COR_PRETA)
 
@@ -23,11 +23,11 @@ def mostrar_urls():
     except TclError:
         print('dw_ico.ico não foi encontrado na pasta ico.')
     
-    menubar = Menu(wURL)
+    menubar = tk.Menu(wURL)
     menubar.add_command(label = 'Início', command = main.main)    
     wURL.config(menu = menubar)
      
-    ajuda = Menu(menubar, tearoff = 0)
+    ajuda = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
     ajuda.add_command(label = 'Redes', command = ajuda_redes.ajuda_redes)
 
@@ -40,9 +40,9 @@ def mostrar_urls():
     x = 0
     fonte = ('Times New Roman', '12')
     for url in cursor.fetchall():
-        lURL = Label(wURL, text = url, font = fonte)
+        lURL = tk.Label(wURL, text = url, font = fonte)
         lURL.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-        lURL.grid(column = 0, row = x, sticky = W)
+        lURL.grid(column = 0, row = x, sticky = tk.W)
         x += 1
     
     conn.close()
