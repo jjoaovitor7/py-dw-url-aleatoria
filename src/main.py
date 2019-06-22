@@ -3,13 +3,14 @@ from tkinter import *
 import platform
 import sqlite3
 import webbrowser
+import definir_cor
 import mostrar_urls
 import ajuda_redes
 
 def main():
     wMain = Tk()
     wMain.title('Deep Web URL Aleatório')
-    wMain.configure(bg = 'black')
+    wMain.configure(bg = definir_cor.COR_PRETA)
     
     so = platform.system()
     try:
@@ -37,19 +38,19 @@ def main():
     lTitulo = Label(wMain, text = 'Deep Web URL Aleatório', 
                     font = ('Comic Sans MS', '10', 'bold'))
     lTitulo.grid(column = 0, row = 0, sticky = N)
-    lTitulo.configure(bg = 'black', fg = '#00ff00')
+    lTitulo.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
     
     def tema_branco():        
-        wMain.configure(bg = 'white')
-        lTitulo.configure(bg = 'white', fg = 'black')
-        lURL.configure(bg = 'white', fg = 'black')
-        botao_go.configure(bg = 'white', fg = 'black')
+        wMain.configure(bg = definir_cor.COR_BRANCA)
+        lTitulo.configure(bg = definir_cor.COR_BRANCA, fg = definir_cor.COR_PRETA)
+        lURL.configure(bg = definir_cor.COR_BRANCA, fg = definir_cor.COR_PRETA)
+        botao_go.configure(bg = definir_cor.COR_BRANCA, fg = definir_cor.COR_PRETA)
 
     def tema_preto():      
-        wMain.configure(bg = 'black')
-        lTitulo.configure(bg = 'black', fg = '#00ff00')
-        lURL.configure(bg = 'black', fg = '#00ff00')
-        botao_go.configure(bg = 'black', fg = '#00ff00')
+        wMain.configure(bg = definir_cor.COR_PRETA)
+        lTitulo.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+        lURL.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+        botao_go.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
 
     temas.add_command(label = 'Tema Branco', command = tema_branco)
     temas.add_command(label = 'Tema Preto', command = tema_preto)
@@ -57,7 +58,7 @@ def main():
     fonte = ('Comic Sans MS', '10')
     lURL = Label(wMain, text = 'URL', font = fonte)
     lURL.grid(column = 0, row = 2)
-    lURL.configure(bg = 'black', fg = '#00ff00')
+    lURL.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
 
     def botao_go_clicado():        
         conn = sqlite3.connect('urls.db')
@@ -75,7 +76,7 @@ def main():
             
     botao_go = Button(wMain, text = 'Go!', command = botao_go_clicado)
     botao_go.grid(column = 0, row = 4)
-    botao_go.configure(bg = 'black', fg = '#00ff00')
+    botao_go.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
 
     wMain.mainloop()
         

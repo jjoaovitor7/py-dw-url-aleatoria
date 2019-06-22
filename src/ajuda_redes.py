@@ -2,13 +2,14 @@
 from tkinter import *
 import platform
 import sqlite3
+import definir_cor
 import main
 import mostrar_urls
 
 def ajuda_redes():
     wRedes = Toplevel()
     wRedes.title('Redes')
-    wRedes.configure(bg = 'black')
+    wRedes.configure(bg = definir_cor.COR_PRETA)
 
     so = platform.system()
     try:
@@ -38,9 +39,9 @@ def ajuda_redes():
     lFreenet = Label(wRedes, text = 'Freenet: https://freenetproject.org/', 
                      font = fonte)
     
-    lOnion.configure(bg = 'black', fg = '#00ff00')  
-    lI2p.configure(bg = 'black', fg = '#00ff00')
-    lFreenet.configure(bg = 'black', fg = '#00ff00')
+    lOnion.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)  
+    lI2p.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+    lFreenet.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
     
     lOnion.grid(column = 0, row = 0, sticky = W)
     lI2p.grid(column = 0, row = 1, sticky = W)
