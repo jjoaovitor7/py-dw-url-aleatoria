@@ -6,30 +6,29 @@ import definir_cor
 import main
 import ajuda_redes
 
-def mostrar_urls():
-    wURL = tk.Toplevel()
-    wURL.title('URLs')
-    wURL.config(bg = definir_cor.COR_PRETA)
+def mostrar_urls(self):
+    self.title('URLs')
+    self.config(bg = definir_cor.COR_PRETA)
 
     so = platform.system()
     try:
         if so == 'Linux':
-           wURL.wm_iconbitmap('@ico/dw_ico.xbm')
+           self.wm_iconbitmap('@ico/dw_ico.xbm')
     except TclError:
         print('dw_ico.xbm não foi encontrado na pasta ico.')
     try:
         if so == 'Windows':
-           wURL.wm_iconbitmap('ico\dw_ico.ico')
+           self.wm_iconbitmap('ico\dw_ico.ico')
     except TclError:
         print('dw_ico.ico não foi encontrado na pasta ico.')
     
-    menubar = tk.Menu(wURL)
+    menubar = tk.Menu(self)
     menubar.add_command(label = 'Início', command = main.run)    
-    wURL.config(menu = menubar)
+    self.config(menu = menubar)
      
     ajuda = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'Redes', command = ajuda_redes.ajuda_redes)
+    ajuda.add_command(label = 'Redes', command = ajuda_redes.run)
 
     conn = sqlite3.connect('urls.db')
     cursor = conn.cursor()
@@ -40,9 +39,14 @@ def mostrar_urls():
     x = 0
     fonte = ('Times New Roman', '12')
     for url in cursor.fetchall():
-        lURL = tk.Label(wURL, text = url, font = fonte)
+        lURL = tk.Label(self, text = url, font = fonte)
         lURL.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
         lURL.grid(column = 0, row = x, sticky = tk.W)
         x += 1
     
     conn.close()
+
+def run():
+    root = tk.Toplevel()
+    mostrar_urls(root)
+    root.mainloop()
