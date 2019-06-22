@@ -31,8 +31,8 @@ def main(self):
 
     ajuda = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'URLs', command = mostrar_urls.mostrar_urls)
-    ajuda.add_command(label = 'Redes', command = ajuda_redes.ajuda_redes)
+    ajuda.add_command(label = 'URLs', command = mostrar_urls.run)
+    ajuda.add_command(label = 'Redes', command = ajuda_redes.run)
 
     lTitulo = tk.Label(self, text = 'Deep Web URL Aleatório', 
                     font = ('Comic Sans MS', '10', 'bold'))
