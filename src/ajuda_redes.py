@@ -24,7 +24,7 @@ def ajuda_redes():
         print('dw_ico.ico não foi encontrado na pasta ico.')
         
     menubar = tk.Menu(wRedes)
-    menubar.add_command(label = 'Início', command = main.main)    
+    #menubar.add_command(label = 'Início', command = main.main)    
     wRedes.config(menu = menubar)
     
     ajuda = tk.Menu(menubar, tearoff = 0)
