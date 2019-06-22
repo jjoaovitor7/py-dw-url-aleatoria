@@ -9,7 +9,7 @@ import mostrar_urls
 def ajuda_redes():
     wRedes = tk.Toplevel()
     wRedes.title('Redes')
-    wRedes.configure(bg = definir_cor.COR_PRETA)
+    wRedes.config(bg = definir_cor.COR_PRETA)
 
     so = platform.system()
     try:
@@ -24,7 +24,7 @@ def ajuda_redes():
         print('dw_ico.ico não foi encontrado na pasta ico.')
         
     menubar = tk.Menu(wRedes)
-    #menubar.add_command(label = 'Início', command = main.main)    
+    menubar.add_command(label = 'Início', command = main.run)    
     wRedes.config(menu = menubar)
     
     ajuda = tk.Menu(menubar, tearoff = 0)
@@ -39,9 +39,9 @@ def ajuda_redes():
     lFreenet = tk.Label(wRedes, text = 'Freenet: https://freenetproject.org/', 
                      font = fonte)
     
-    lOnion.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)  
-    lI2p.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-    lFreenet.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+    lOnion.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)  
+    lI2p.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+    lFreenet.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
     
     lOnion.grid(column = 0, row = 0, sticky = tk.W)
     lI2p.grid(column = 0, row = 1, sticky = tk.W)
