@@ -9,7 +9,7 @@ import ajuda_redes
 def mostrar_urls():
     wURL = tk.Toplevel()
     wURL.title('URLs')
-    wURL.configure(bg = definir_cor.COR_PRETA)
+    wURL.config(bg = definir_cor.COR_PRETA)
 
     so = platform.system()
     try:
@@ -24,7 +24,7 @@ def mostrar_urls():
         print('dw_ico.ico não foi encontrado na pasta ico.')
     
     menubar = tk.Menu(wURL)
-    #menubar.add_command(label = 'Início', command = main.main)    
+    menubar.add_command(label = 'Início', command = main.run)    
     wURL.config(menu = menubar)
      
     ajuda = tk.Menu(menubar, tearoff = 0)
@@ -41,7 +41,7 @@ def mostrar_urls():
     fonte = ('Times New Roman', '12')
     for url in cursor.fetchall():
         lURL = tk.Label(wURL, text = url, font = fonte)
-        lURL.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+        lURL.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
         lURL.grid(column = 0, row = x, sticky = tk.W)
         x += 1
     
