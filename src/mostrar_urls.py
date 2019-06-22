@@ -2,13 +2,14 @@
 from tkinter import *
 import platform
 import sqlite3
+import definir_cor
 import main
 import ajuda_redes
 
 def mostrar_urls():
     wURL = Toplevel()
     wURL.title('URLs')
-    wURL.configure(bg = 'black')
+    wURL.configure(bg = definir_cor.COR_PRETA)
 
     so = platform.system()
     try:
@@ -40,7 +41,7 @@ def mostrar_urls():
     fonte = ('Times New Roman', '12')
     for url in cursor.fetchall():
         lURL = Label(wURL, text = url, font = fonte)
-        lURL.configure(bg = 'black', fg = '#00ff00')
+        lURL.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
         lURL.grid(column = 0, row = x, sticky = W)
         x += 1
     
