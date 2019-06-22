@@ -76,8 +76,12 @@ def main(self):
     botao_go = tk.Button(self, text = 'Go!', command = botao_go_clicado)
     botao_go.grid(column = 0, row = 4)
     botao_go.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-        
-if __name__ == '__main__':
+    
+def run():
     root = tk.Tk()
     main(root)
     root.mainloop()
+
+if __name__ == '__main__':
+    run()
+    
