@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from tkinter import *
+import tkinter as tk
 import platform
 import sqlite3
 import definir_cor
@@ -7,7 +7,7 @@ import main
 import mostrar_urls
 
 def ajuda_redes():
-    wRedes = Toplevel()
+    wRedes = tk.Toplevel()
     wRedes.title('Redes')
     wRedes.configure(bg = definir_cor.COR_PRETA)
 
@@ -23,26 +23,26 @@ def ajuda_redes():
     except TclError:
         print('dw_ico.ico não foi encontrado na pasta ico.')
         
-    menubar = Menu(wRedes)
+    menubar = tk.Menu(wRedes)
     menubar.add_command(label = 'Início', command = main.main)    
     wRedes.config(menu = menubar)
     
-    ajuda = Menu(menubar, tearoff = 0)
+    ajuda = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
     ajuda.add_command(label = 'URLs', command = mostrar_urls.mostrar_urls)
     
     fonte = ('Times New Roman', '12')
-    lOnion = Label(wRedes, text = 'Onion: https://www.torproject.org/download/', 
+    lOnion = tk.Label(wRedes, text = 'Onion: https://www.torproject.org/download/', 
                    font = fonte)
-    lI2p = Label(wRedes, text = 'i2p: https://geti2p.net/pt-br/download', 
+    lI2p = tk.Label(wRedes, text = 'i2p: https://geti2p.net/pt-br/download', 
                  font = fonte)
-    lFreenet = Label(wRedes, text = 'Freenet: https://freenetproject.org/', 
+    lFreenet = tk.Label(wRedes, text = 'Freenet: https://freenetproject.org/', 
                      font = fonte)
     
     lOnion.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)  
     lI2p.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
     lFreenet.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
     
-    lOnion.grid(column = 0, row = 0, sticky = W)
-    lI2p.grid(column = 0, row = 1, sticky = W)
-    lFreenet.grid(column = 0, row = 2, sticky = W)
+    lOnion.grid(column = 0, row = 0, sticky = tk.W)
+    lI2p.grid(column = 0, row = 1, sticky = tk.W)
+    lFreenet.grid(column = 0, row = 2, sticky = tk.W)
