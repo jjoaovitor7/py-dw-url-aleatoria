@@ -2,6 +2,7 @@
 import tkinter as tk
 import platform
 import sqlite3
+
 import definir_cor
 import main
 import ajuda_redes
@@ -40,7 +41,8 @@ def mostrar_urls(self):
     fonte = ('Times New Roman', '12')
     for url in cursor.fetchall():
         lURL = tk.Label(self, text = url, font = fonte)
-        lURL.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+        lURL.config(bg = definir_cor.COR_PRETA, 
+                    fg = definir_cor.COR_VERDE_CLARO)
         lURL.grid(column = 0, row = x, sticky = tk.W)
         x += 1
     
