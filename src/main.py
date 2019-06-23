@@ -3,12 +3,13 @@ import tkinter as tk
 import platform
 import sqlite3
 import webbrowser
+
 import definir_cor
 import mostrar_urls
 import ajuda_redes
 
 def main(self):
-    self.title('Deep Web URL Aleatório')
+    self.title('Deep Web URL Aleatória')
     self.config(bg = definir_cor.COR_PRETA)
     
     so = platform.system()
@@ -25,39 +26,50 @@ def main(self):
         
     menubar = tk.Menu(self)
     self.config(menu = menubar)
-
+    
+    preferencias = tk.Menu(menubar, tearoff = 0)
+    menubar.add_cascade(label = 'Preferências', menu = preferencias)
+    
     temas = tk.Menu(menubar, tearoff = 0)
-    menubar.add_cascade(label = 'Temas', menu = temas)
+    preferencias.add_cascade(label = 'Temas', menu = temas)
 
     ajuda = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
     ajuda.add_command(label = 'URLs', command = mostrar_urls.run)
     ajuda.add_command(label = 'Redes', command = ajuda_redes.run)
 
-    lTitulo = tk.Label(self, text = 'Deep Web URL Aleatório', 
-                    font = ('Comic Sans MS', '10', 'bold'))
+    lTitulo = tk.Label(self, text = 'Deep Web URL Aleatória', 
+                    font = ('Comic Sans MS', '12', 'bold'))
     lTitulo.grid(column = 0, row = 0, sticky = tk.N)
-    lTitulo.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+    lTitulo.config(bg = definir_cor.COR_PRETA, 
+                   fg = definir_cor.COR_VERDE_CLARO)
     
     def tema_branco():        
         self.config(bg = definir_cor.COR_BRANCA)
-        lTitulo.config(bg = definir_cor.COR_BRANCA, fg = definir_cor.COR_PRETA)
-        lURL.config(bg = definir_cor.COR_BRANCA, fg = definir_cor.COR_PRETA)
-        botao_go.config(bg = definir_cor.COR_BRANCA, fg = definir_cor.COR_PRETA)
+        lTitulo.config(bg = definir_cor.COR_BRANCA, 
+                       fg = definir_cor.COR_PRETA)
+        lURL.config(bg = definir_cor.COR_BRANCA, 
+                    fg = definir_cor.COR_PRETA)
+        botao_go.config(bg = definir_cor.COR_BRANCA, 
+                        fg = definir_cor.COR_PRETA)
 
     def tema_preto():      
         self.config(bg = definir_cor.COR_PRETA)
-        lTitulo.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-        lURL.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-        botao_go.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+        lTitulo.config(bg = definir_cor.COR_PRETA, 
+                       fg = definir_cor.COR_VERDE_CLARO)
+        lURL.config(bg = definir_cor.COR_PRETA, 
+                    fg = definir_cor.COR_VERDE_CLARO)
+        botao_go.config(bg = definir_cor.COR_PRETA, 
+                        fg = definir_cor.COR_VERDE_CLARO)
 
     temas.add_command(label = 'Tema Branco', command = tema_branco)
     temas.add_command(label = 'Tema Preto', command = tema_preto)
     
-    fonte = ('Comic Sans MS', '10')
+    fonte = ('Comic Sans MS', '12')
     lURL = tk.Label(self, text = 'URL', font = fonte)
     lURL.grid(column = 0, row = 2)
-    lURL.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+    lURL.config(bg = definir_cor.COR_PRETA, 
+                fg = definir_cor.COR_VERDE_CLARO)
 
     def botao_go_clicado():        
         conn = sqlite3.connect('urls.db')
@@ -73,9 +85,11 @@ def main(self):
             webbrowser.open_new(url2_)
         lURL.bind('<Button-1>', clicar_url)
             
-    botao_go = tk.Button(self, text = 'Go!', command = botao_go_clicado)
+    botao_go = tk.Button(self, text = 'Go!', relief = tk.RAISED, 
+                         command = botao_go_clicado)
     botao_go.grid(column = 0, row = 4)
-    botao_go.config(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
+    botao_go.config(bg = definir_cor.COR_PRETA, 
+                    fg = definir_cor.COR_VERDE_CLARO)
     
 def run():
     root = tk.Tk()
@@ -84,4 +98,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-    
