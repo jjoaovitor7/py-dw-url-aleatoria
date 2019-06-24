@@ -5,7 +5,6 @@ import platform
 import sqlite3
 
 import definir_cor
-import main
 import mostrar_urls
 
 def ajuda_redes(self):
