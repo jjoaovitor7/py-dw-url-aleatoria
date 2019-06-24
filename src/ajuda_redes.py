@@ -1,48 +1,64 @@
 # -*- coding: utf-8 -*-
-from tkinter import *
+import tkinter as tk
+from tkinter import ttk
 import platform
 import sqlite3
+
 import definir_cor
-import main
 import mostrar_urls
 
-def ajuda_redes():
-    wRedes = Toplevel()
-    wRedes.title('Redes')
-    wRedes.configure(bg = definir_cor.COR_PRETA)
-
-    so = platform.system()
-    try:
-        if so == 'Linux':
-           wRedes.wm_iconbitmap('@ico/dw_ico.xbm')
-    except TclError:
-        print('dw_ico.xbm não foi encontrado na pasta ico.')
-    try:
-        if so == 'Windows':
-           wRedes.wm_iconbitmap('ico\dw_ico.ico')
-    except TclError:
-        print('dw_ico.ico não foi encontrado na pasta ico.')
+def ajuda_redes(self):
+    
+    def configurar_janela():
+        self.title('Redes')
         
-    menubar = Menu(wRedes)
-    menubar.add_command(label = 'Início', command = main.main)    
-    wRedes.config(menu = menubar)
+    def configurar_icone():
+        so = platform.system()
+        try:
+            if so == 'Linux':
+               self.wm_iconbitmap('@ico/dw_ico.xbm')
+        except TclError:
+            print('dw_ico.xbm não foi encontrado na pasta ico.')
+        try:
+            if so == 'Windows':
+               self.wm_iconbitmap('ico\dw_ico.ico')
+        except TclError:
+            print('dw_ico.ico não foi encontrado na pasta ico.')
     
-    ajuda = Menu(menubar, tearoff = 0)
+    def tema_preto():
+        self.config(bg = definir_cor.COR_PRETA)
+        style = ttk.Style()
+        style.configure('redes.TLabel', background = definir_cor.COR_PRETA, 
+                        foreground = definir_cor.COR_VERDE_CLARO, 
+                        font = ('Times New Roman', '14'))
+    
+    configurar_janela()
+    configurar_icone()
+    
+    tema_preto()
+                    
+    menubar = tk.Menu(self)
+    self.config(menu = menubar)
+    
+    ajuda = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'URLs', command = mostrar_urls.mostrar_urls)
+    ajuda.add_command(label = 'URLs', command = mostrar_urls.run)
     
-    fonte = ('Times New Roman', '12')
-    lOnion = Label(wRedes, text = 'Onion: https://www.torproject.org/download/', 
-                   font = fonte)
-    lI2p = Label(wRedes, text = 'i2p: https://geti2p.net/pt-br/download', 
-                 font = fonte)
-    lFreenet = Label(wRedes, text = 'Freenet: https://freenetproject.org/', 
-                     font = fonte)
+    l_onion = ttk.Label(self, 
+                        text = 'Onion: https://www.torproject.org/download', 
+                        style = 'redes.TLabel')
+    l_i2p = ttk.Label(self, 
+                      text = 'i2p: https://geti2p.net/pt-br/download', 
+                      style = 'redes.TLabel')
+    l_freenet = ttk.Label(self, 
+                          text = 'Freenet: https://freenetproject.org', 
+                          style = 'redes.TLabel')
     
-    lOnion.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)  
-    lI2p.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-    lFreenet.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-    
-    lOnion.grid(column = 0, row = 0, sticky = W)
-    lI2p.grid(column = 0, row = 1, sticky = W)
-    lFreenet.grid(column = 0, row = 2, sticky = W)
+    l_onion.grid( row = 0, column = 0, sticky = tk.W)
+    l_i2p.grid(row = 1, column = 0, sticky = tk.W)
+    l_freenet.grid(row = 2, column = 0, sticky = tk.W)
+
+def run():
+    root = tk.Toplevel()
+    ajuda_redes(root)
+    root.mainloop()

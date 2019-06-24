@@ -1,35 +1,48 @@
 # -*- coding: utf-8 -*-
-from tkinter import *
+import tkinter as tk
+from tkinter import ttk
 import platform
 import sqlite3
+
 import definir_cor
-import main
 import ajuda_redes
 
-def mostrar_urls():
-    wURL = Toplevel()
-    wURL.title('URLs')
-    wURL.configure(bg = definir_cor.COR_PRETA)
-
-    so = platform.system()
-    try:
-        if so == 'Linux':
-           wURL.wm_iconbitmap('@ico/dw_ico.xbm')
-    except TclError:
-        print('dw_ico.xbm não foi encontrado na pasta ico.')
-    try:
-        if so == 'Windows':
-           wURL.wm_iconbitmap('ico\dw_ico.ico')
-    except TclError:
-        print('dw_ico.ico não foi encontrado na pasta ico.')
+def mostrar_urls(self):
     
-    menubar = Menu(wURL)
-    menubar.add_command(label = 'Início', command = main.main)    
-    wURL.config(menu = menubar)
+    def configurar_janela():
+        self.title('URLs')
+
+    def configurar_icone():
+        so = platform.system()
+        try:
+            if so == 'Linux':
+               self.wm_iconbitmap('@ico/dw_ico.xbm')
+        except TclError:
+               print('dw_ico.xbm não foi encontrado na pasta ico.')
+        try:
+            if so == 'Windows':
+                self.wm_iconbitmap('ico\dw_ico.ico')
+        except TclError:
+                print('dw_ico.ico não foi encontrado na pasta ico.')
+                
+    def tema_preto():
+        self.config(bg = definir_cor.COR_PRETA)
+        style = ttk.Style()
+        style.configure('urls.TLabel', background = definir_cor.COR_PRETA, 
+                        foreground = definir_cor.COR_VERDE_CLARO, 
+                        font = ('Times New Roman', '14'))
+    
+    configurar_janela()
+    configurar_icone()
+    
+    tema_preto()
+    
+    menubar = tk.Menu(self)
+    self.config(menu = menubar)
      
-    ajuda = Menu(menubar, tearoff = 0)
+    ajuda = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'Redes', command = ajuda_redes.ajuda_redes)
+    ajuda.add_command(label = 'Redes', command = ajuda_redes.run)
 
     conn = sqlite3.connect('urls.db')
     cursor = conn.cursor()
@@ -38,11 +51,15 @@ def mostrar_urls():
     """)
     
     x = 0
-    fonte = ('Times New Roman', '12')
     for url in cursor.fetchall():
-        lURL = Label(wURL, text = url, font = fonte)
-        lURL.configure(bg = definir_cor.COR_PRETA, fg = definir_cor.COR_VERDE_CLARO)
-        lURL.grid(column = 0, row = x, sticky = W)
+        l_url = ttk.Label(self, text = url, 
+                          style = 'urls.TLabel')
+        l_url.grid(column = 0, row = x, sticky = tk.W)
         x += 1
     
     conn.close()
+
+def run():
+    root = tk.Toplevel()
+    mostrar_urls(root)
+    root.mainloop()
