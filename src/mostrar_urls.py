@@ -8,7 +8,6 @@ import definir_cor
 import ajuda_redes
 
 def mostrar_urls(self):
-    
     def configurar_janela():
         self.title('URLs')
 
