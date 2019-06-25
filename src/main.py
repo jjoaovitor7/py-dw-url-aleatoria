@@ -10,7 +10,6 @@ import mostrar_urls
 import ajuda_redes
 
 def main(self):
-    
     def configurar_janela():
         self.title('Deep Web URL Aleatória')
         self.geometry('500x75')
