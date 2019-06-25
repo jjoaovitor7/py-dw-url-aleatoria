@@ -54,7 +54,7 @@ def mostrar_urls(self):
     for url in cursor.fetchall():
         l_url = ttk.Label(self, text = url, 
                           style = 'urls.TLabel')
-        l_url.grid(column = 0, row = x, sticky = tk.W)
+        l_url.grid(row = x, column = 0, sticky = tk.W)
         x += 1
     
     conn.close()
