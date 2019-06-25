@@ -21,9 +21,9 @@ def mostrar_urls(self):
                print('dw_ico.xbm não foi encontrado na pasta ico.')
         try:
             if so == 'Windows':
-                self.wm_iconbitmap('ico\dw_ico.ico')
+               self.wm_iconbitmap('ico\dw_ico.ico')
         except TclError:
-                print('dw_ico.ico não foi encontrado na pasta ico.')
+               print('dw_ico.ico não foi encontrado na pasta ico.')
                 
     def tema_preto():
         self.config(bg = definir_cor.COR_PRETA)
