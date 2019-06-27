@@ -27,7 +27,7 @@ def main(self):
                self.wm_iconbitmap('ico\dw_ico.ico')
         except TclError:
             print('dw_ico.ico não foi encontrado na pasta ico.')
-    
+
     def tema_preto():
         self.config(bg = definir_cor.COR_PRETA)
         style = ttk.Style()
@@ -37,7 +37,7 @@ def main(self):
         style.configure('main.TButton', background = definir_cor.COR_PRETA,
                         foreground = definir_cor.COR_VERDE_CLARO,
                         width = 5, relief = tk.RAISED)
-    
+
     def tema_branco():
         self.config(bg = definir_cor.COR_BRANCA)
         style = ttk.Style()
@@ -47,21 +47,21 @@ def main(self):
         style.configure('main.TButton', background = definir_cor.COR_BRANCA,
                         foreground = definir_cor.COR_PRETA,
                         width = 5, relief = tk.RAISED)
-    
+
     configurar_janela()
     configurar_icone()
-    
+
     tema_preto()
 
     menubar = tk.Menu(self)
     self.config(menu = menubar)
-    
+
     preferencias = tk.Menu(menubar, tearoff = 0)
     menubar.add_cascade(label = 'Preferências', menu = preferencias)
-    
+
     temas = tk.Menu(menubar, tearoff = 0)
     preferencias.add_cascade(label = 'Temas', menu = temas)
-    
+
     temas.add_command(label = 'Tema Branco', command = tema_branco)
     temas.add_command(label = 'Tema Preto', command = tema_preto)
 
@@ -72,10 +72,10 @@ def main(self):
 
     l_titulo = ttk.Label(self, text = 'Deep Web URL Aleatória', style = 'main.TLabel')
     l_titulo.grid(row = 0, column = 0)
-    
+
     l_url = ttk.Label(self, text = 'URL', style = 'main.TLabel')
     l_url.grid(row = 1, column = 0)
-    
+
     def b_go_clicado():
         conn = sqlite3.connect('urls.db')
         cursor = conn.cursor()
@@ -89,12 +89,12 @@ def main(self):
         def clicar_url(event):
             webbrowser.open_new(get_url_)
         l_url.bind('<Button-1>', clicar_url)
-            
+
     b_go = ttk.Button(self, text = 'Go!',
                       style = 'main.TButton',
                       command = b_go_clicado)
     b_go.grid(row = 3, column = 0)
-    
+
 def run():
     root = tk.Tk()
     main(root)
