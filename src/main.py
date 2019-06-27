@@ -31,21 +31,21 @@ def main(self):
     def tema_preto():
         self.config(bg = definir_cor.COR_PRETA)
         style = ttk.Style()
-        style.configure('main.TLabel', background = definir_cor.COR_PRETA, 
-                        foreground = definir_cor.COR_VERDE_CLARO, 
+        style.configure('main.TLabel', background = definir_cor.COR_PRETA,
+                        foreground = definir_cor.COR_VERDE_CLARO,
                         font = ('Times New Roman', '14'))
-        style.configure('main.TButton', background = definir_cor.COR_PRETA, 
-                        foreground = definir_cor.COR_VERDE_CLARO, 
+        style.configure('main.TButton', background = definir_cor.COR_PRETA,
+                        foreground = definir_cor.COR_VERDE_CLARO,
                         width = 5, relief = tk.RAISED)
     
     def tema_branco():
         self.config(bg = definir_cor.COR_BRANCA)
         style = ttk.Style()
-        style.configure('main.TLabel', background = definir_cor.COR_BRANCA, 
-                        foreground = definir_cor.COR_PRETA, 
+        style.configure('main.TLabel', background = definir_cor.COR_BRANCA,
+                        foreground = definir_cor.COR_PRETA,
                         font = ('Times New Roman', '14'))
-        style.configure('main.TButton', background = definir_cor.COR_BRANCA, 
-                        foreground = definir_cor.COR_PRETA, 
+        style.configure('main.TButton', background = definir_cor.COR_BRANCA,
+                        foreground = definir_cor.COR_PRETA,
                         width = 5, relief = tk.RAISED)
     
     configurar_janela()
@@ -90,8 +90,8 @@ def main(self):
             webbrowser.open_new(get_url_)
         l_url.bind('<Button-1>', clicar_url)
             
-    b_go = ttk.Button(self, text = 'Go!', 
-                      style = 'main.TButton', 
+    b_go = ttk.Button(self, text = 'Go!',
+                      style = 'main.TButton',
                       command = b_go_clicado)
     b_go.grid(row = 3, column = 0)
     
