@@ -9,6 +9,7 @@ import definir_cor
 import mostrar_urls
 import ajuda_redes
 
+
 def main(self):
     def configurar_janela():
         self.title('Deep Web URL Aleatória')
@@ -94,6 +95,7 @@ def main(self):
                       style = 'main.TButton',
                       command = b_go_clicado)
     b_go.grid(row = 3, column = 0)
+
 
 def run():
     root = tk.Tk()
