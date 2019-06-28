@@ -14,7 +14,7 @@ def main(self):
     def configurar_janela():
         self.title('Deep Web URL Aleatória')
         self.geometry('500x75')
-        self.grid_columnconfigure(0, weight = 1)
+        self.grid_columnconfigure(0, weight=1)
 
     def configurar_icone():
         so = platform.system()
@@ -30,24 +30,24 @@ def main(self):
             print('dw_ico.ico não foi encontrado na pasta ico.')
 
     def tema_preto():
-        self.config(bg = definir_cor.COR_PRETA)
+        self.config(bg=definir_cor.COR_PRETA)
         style = ttk.Style()
-        style.configure('main.TLabel', background = definir_cor.COR_PRETA,
-                        foreground = definir_cor.COR_VERDE_CLARO,
-                        font = ('Times New Roman', '14'))
-        style.configure('main.TButton', background = definir_cor.COR_PRETA,
-                        foreground = definir_cor.COR_VERDE_CLARO,
-                        width = 5, relief = tk.RAISED)
+        style.configure('main.TLabel', background=definir_cor.COR_PRETA,
+                        foreground=definir_cor.COR_VERDE_CLARO,
+                        font=('Times New Roman', '14'))
+        style.configure('main.TButton', background=definir_cor.COR_PRETA,
+                        foreground=definir_cor.COR_VERDE_CLARO,
+                        width=5, relief=tk.RAISED)
 
     def tema_branco():
-        self.config(bg = definir_cor.COR_BRANCA)
+        self.config(bg=definir_cor.COR_BRANCA)
         style = ttk.Style()
-        style.configure('main.TLabel', background = definir_cor.COR_BRANCA,
-                        foreground = definir_cor.COR_PRETA,
-                        font = ('Times New Roman', '14'))
-        style.configure('main.TButton', background = definir_cor.COR_BRANCA,
-                        foreground = definir_cor.COR_PRETA,
-                        width = 5, relief = tk.RAISED)
+        style.configure('main.TLabel', background=definir_cor.COR_BRANCA,
+                        foreground=definir_cor.COR_PRETA,
+                        font=('Times New Roman', '14'))
+        style.configure('main.TButton', background=definir_cor.COR_BRANCA,
+                        foreground=definir_cor.COR_PRETA,
+                        width=5, relief=tk.RAISED)
 
     configurar_janela()
     configurar_icone()
