@@ -87,16 +87,17 @@ def main(self):
         """)
         get_url = cursor.fetchall()
         get_url_ = str(get_url).strip('()[],\'\'')
-        l_url.config(text = get_url)
+        l_url.config(text=get_url)
         conn.close()
+        
         def clicar_url(event):
             webbrowser.open_new(get_url_)
         l_url.bind('<Button-1>', clicar_url)
 
-    b_go = ttk.Button(self, text = 'Go!',
-                      style = 'main.TButton',
-                      command = b_go_clicado)
-    b_go.grid(row = 3, column = 0)
+    b_go = ttk.Button(self, text='Go!',
+                      style='main.TButton',
+                      command=b_go_clicado)
+    b_go.grid(row=3, column=0)
 
 
 def run():
