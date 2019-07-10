@@ -55,21 +55,21 @@ def main(self):
     tema_preto()
 
     menubar = tk.Menu(self)
-    self.config(menu = menubar)
+    self.config(menu=menubar)
 
-    preferencias = tk.Menu(menubar, tearoff = 0)
-    menubar.add_cascade(label = 'Preferências', menu = preferencias)
+    preferencias = tk.Menu(menubar, tearoff=0)
+    menubar.add_cascade(label='Preferências', menu=preferencias)
 
-    temas = tk.Menu(menubar, tearoff = 0)
-    preferencias.add_cascade(label = 'Temas', menu = temas)
+    temas = tk.Menu(menubar, tearoff=0)
+    preferencias.add_cascade(label='Temas', menu=temas)
 
-    temas.add_command(label = 'Tema Branco', command = tema_branco)
-    temas.add_command(label = 'Tema Preto', command = tema_preto)
+    temas.add_command(label='Tema Branco', command=tema_branco)
+    temas.add_command(label='Tema Preto', command=tema_preto)
 
-    ajuda = tk.Menu(menubar, tearoff = 0)
-    menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'URLs', command = mostrar_urls.run)
-    ajuda.add_command(label = 'Redes', command = ajuda_redes.run)
+    ajuda = tk.Menu(menubar, tearoff=0)
+    menubar.add_cascade(label='Ajuda', menu=ajuda)
+    ajuda.add_command(label='URLs', command=mostrar_urls.run)
+    ajuda.add_command(label='Redes', command=ajuda_redes.run)
 
     l_titulo = ttk.Label(self, text = 'Deep Web URL Aleatória', style = 'main.TLabel')
     l_titulo.grid(row = 0, column = 0)
