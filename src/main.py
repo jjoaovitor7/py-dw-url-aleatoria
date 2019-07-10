@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import tkinter as tk
 from tkinter import ttk
@@ -71,11 +72,12 @@ def main(self):
     ajuda.add_command(label='URLs', command=mostrar_urls.run)
     ajuda.add_command(label='Redes', command=ajuda_redes.run)
 
-    l_titulo = ttk.Label(self, text = 'Deep Web URL Aleatória', style = 'main.TLabel')
-    l_titulo.grid(row = 0, column = 0)
+    l_titulo = ttk.Label(self, text='Deep Web URL Aleatória',
+                         style='main.TLabel')
+    l_titulo.grid(row=0, column=0)
 
-    l_url = ttk.Label(self, text = 'URL', style = 'main.TLabel')
-    l_url.grid(row = 1, column = 0)
+    l_url = ttk.Label(self, text='URL', style='main.TLabel')
+    l_url.grid(row=1, column=0)
 
     def b_go_clicado():
         conn = sqlite3.connect('urls.db')
@@ -101,6 +103,7 @@ def run():
     root = tk.Tk()
     main(root)
     root.mainloop()
+
 
 if __name__ == '__main__':
     run()
