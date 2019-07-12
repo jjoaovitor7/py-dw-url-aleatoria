@@ -8,6 +8,7 @@ import sqlite3
 import definir_cor
 import ajuda_redes
 
+
 def mostrar_urls(self):
     def configurar_janela():
         self.title('URLs')
@@ -26,11 +27,11 @@ def mostrar_urls(self):
                print('dw_ico.ico não foi encontrado na pasta ico.')
 
     def tema_preto():
-        self.config(bg = definir_cor.COR_PRETA)
+        self.config(bg=definir_cor.COR_PRETA)
         style = ttk.Style()
-        style.configure('urls.TLabel', background = definir_cor.COR_PRETA,
-                        foreground = definir_cor.COR_VERDE_CLARO,
-                        font = ('Times New Roman', '14'))
+        style.configure('urls.TLabel', background=definir_cor.COR_PRETA,
+                        foreground=definir_cor.COR_VERDE_CLARO,
+                        font=('Times New Roman', '14'))
 
     configurar_janela()
     configurar_icone()
@@ -38,11 +39,11 @@ def mostrar_urls(self):
     tema_preto()
 
     menubar = tk.Menu(self)
-    self.config(menu = menubar)
+    self.config(menu=menubar)
 
-    ajuda = tk.Menu(menubar, tearoff = 0)
-    menubar.add_cascade(label = 'Ajuda', menu = ajuda)
-    ajuda.add_command(label = 'Redes', command = ajuda_redes.run)
+    ajuda = tk.Menu(menubar, tearoff=0)
+    menubar.add_cascade(label='Ajuda', menu=ajuda)
+    ajuda.add_command(label='Redes', command=ajuda_redes.run)
 
     conn = sqlite3.connect('urls.db')
     cursor = conn.cursor()
@@ -52,12 +53,13 @@ def mostrar_urls(self):
 
     x = 0
     for url in cursor.fetchall():
-        l_url = ttk.Label(self, text = url,
-                          style = 'urls.TLabel')
-        l_url.grid(row = x, column = 0, sticky = tk.W)
+        l_url = ttk.Label(self, text=url,
+                          style='urls.TLabel')
+        l_url.grid(row=x, column=0, sticky=tk.W)
         x += 1
 
     conn.close()
+
 
 def run():
     root = tk.Toplevel()
