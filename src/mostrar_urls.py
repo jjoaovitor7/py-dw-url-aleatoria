@@ -18,12 +18,12 @@ def mostrar_urls(self):
         try:
             if so == 'Linux':
                self.wm_iconbitmap('@ico/dw_ico.xbm')
-        except TclError:
+        except tk.TclError:
                print('dw_ico.xbm não foi encontrado na pasta ico.')
         try:
             if so == 'Windows':
                self.wm_iconbitmap('ico\dw_ico.ico')
-        except TclError:
+        except tk.TclError:
                print('dw_ico.ico não foi encontrado na pasta ico.')
 
     def tema_preto():
