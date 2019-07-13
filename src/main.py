@@ -76,7 +76,7 @@ def main(self):
         messagebox.showinfo('Sobre', 'Programa criado por João Vítor S. F.' +
                             '\nRepositório: ' +
                             'github.com/jjoaovitor7/deep-web-url-aleatoria')
-        
+
     ajuda.add_command(label='Sobre', command=sobre_clicado)
 
     l_titulo = ttk.Label(self, text='Deep Web URL Aleatória',
@@ -96,7 +96,7 @@ def main(self):
         get_url_ = str(get_url).strip('()[],\'\'')
         l_url.config(text=get_url)
         conn.close()
-        
+
         def clicar_url(event):
             webbrowser.open_new(get_url_)
         l_url.bind('<Button-1>', clicar_url)
