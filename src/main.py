@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import platform
 import sqlite3
 import webbrowser
@@ -22,12 +22,12 @@ def main(self):
         try:
             if so == 'Linux':
                self.wm_iconbitmap('@ico/dw_ico.xbm')
-        except TclError:
+        except tk.TclError:
             print('dw_ico.xbm não foi encontrado na pasta ico.')
         try:
             if so == 'Windows':
                self.wm_iconbitmap('ico\dw_ico.ico')
-        except TclError:
+        except tk.TclError:
             print('dw_ico.ico não foi encontrado na pasta ico.')
 
     def tema_preto():
@@ -71,6 +71,13 @@ def main(self):
     menubar.add_cascade(label='Ajuda', menu=ajuda)
     ajuda.add_command(label='URLs', command=mostrar_urls.run)
     ajuda.add_command(label='Redes', command=ajuda_redes.run)
+
+    def sobre_clicado():
+        messagebox.showinfo('Sobre', 'Programa criado por João Vítor S. F.' +
+                            '\nRepositório: ' +
+                            'github.com/jjoaovitor7/deep-web-url-aleatoria')
+        
+    ajuda.add_command(label='Sobre', command=sobre_clicado)
 
     l_titulo = ttk.Label(self, text='Deep Web URL Aleatória',
                          style='main.TLabel')
