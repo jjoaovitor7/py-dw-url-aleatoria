@@ -1,0 +1,3 @@
+include deep-web-url-aleatoria.sh
+include src/ico/*
+include src/urls.db
