@@ -1,7 +1,7 @@
 # Deep Web URL Aleatória *(Deep Web Random URL)*
 
 <p align="center">
-  <img src="https://flat.badgen.net/badge/feito%20com/python/green">&nbsp;
+  <img src="https://flat.badgen.net/badge/feito%20com/python3/green">&nbsp;
   <img src="https://flat.badgen.net/badge/licença/MIT/green">&nbsp;
   <img src="https://flat.badgen.net/github/last-commit/jjoaovitor7/deep-web-url-aleatoria">
   <br />
