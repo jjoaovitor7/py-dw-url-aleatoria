@@ -1,12 +1,12 @@
 # Deep Web URL Aleatória *(Deep Web Random URL)*
 
-<p align="center">
-  <img src="https://flat.badgen.net/badge/feito%20com/python3/green">&nbsp;
-  <img src="https://flat.badgen.net/badge/licença/MIT/green">&nbsp;
-  <img src="https://flat.badgen.net/github/last-commit/jjoaovitor7/deep-web-url-aleatoria">
+<p align='center'>
+  <img src='https://flat.badgen.net/badge/feito%20com/python3/green'>
+  <img src='https://flat.badgen.net/badge/licença/MIT/green'>
+  <img src='https://flat.badgen.net/github/last-commit/jjoaovitor7/deep-web-url-aleatoria'>
   <br />
-  <img src="https://badgen.net/github/stars/jjoaovitor7/deep-web-url-aleatoria">
-  <img src="https://badgen.net/github/forks/jjoaovitor7/deep-web-url-aleatoria">
+  <img src='https://badgen.net/github/stars/jjoaovitor7/deep-web-url-aleatoria'>
+  <img src='https://badgen.net/github/forks/jjoaovitor7/deep-web-url-aleatoria'>
 </p>
 
 > Programa que mostra uma URL aleatória da Deep Web *(Program that show a random Deep Web URL)*.
