@@ -21,7 +21,7 @@ def ajuda_redes(self):
                self.wm_iconbitmap('@ico/dw_ico.xbm')
         except tk.TclError:
             logging.basicConfig(filename='warning.log',
-                                format='[%(asctime)s] %(levelname)s %(message)s',
+                                format='[%(asctime)s] %(levelname)s: %(message)s',
                                 level=logging.WARN)
             logging.warning('dw_ico.xbm não foi encontrado na pasta ico.')
         try:
@@ -29,7 +29,7 @@ def ajuda_redes(self):
                self.wm_iconbitmap('ico\dw_ico.ico')
         except tk.TclError:
             logging.basicConfig(filename='warning.log',
-                                format='[%(asctime)s] %(levelname)s %(message)s',
+                                format='[%(asctime)s] %(levelname)s: %(message)s',
                                 level=logging.WARN)
             logging.warning('dw_ico.ico não foi encontrado na pasta ico.')
 
