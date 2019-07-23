@@ -3,6 +3,7 @@
 import tkinter as tk
 from tkinter import ttk
 import platform
+import logging
 import sqlite3
 
 import definir_cor
@@ -19,12 +20,18 @@ def mostrar_urls(self):
             if so == 'Linux':
                self.wm_iconbitmap('@ico/dw_ico.xbm')
         except tk.TclError:
-               print('dw_ico.xbm não foi encontrado na pasta ico.')
+            logging.basicConfig(filename='warning.log',
+                                format='[%(asctime)s] %(levelname)s: %(message)s',
+                                level=logging.WARN)
+            logging.warning('dw_ico.xbm não foi encontrado na pasta ico.')
         try:
             if so == 'Windows':
                self.wm_iconbitmap('ico\dw_ico.ico')
         except tk.TclError:
-               print('dw_ico.ico não foi encontrado na pasta ico.')
+            logging.basicConfig(filename='warning.log',
+                                format='[%(asctime)s] %(levelname)s: %(message)s',
+                                level=logging.WARN)
+            logging.warning('dw_ico.ico não foi encontrado na pasta ico.')
 
     def tema_preto():
         self.config(bg=definir_cor.COR_PRETA)
