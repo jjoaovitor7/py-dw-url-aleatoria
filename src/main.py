@@ -41,7 +41,6 @@ def main(self):
 
     configurar_janela()
     configurar_icone.configurar_icone(self)
-    configurar_icone()
 
     tema_preto()
 
