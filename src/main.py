@@ -18,25 +18,6 @@ def main(self):
         self.geometry('500x75')
         self.grid_columnconfigure(0, weight=1)
 
-    def configurar_icone():
-        so = platform.system()
-        try:
-            if so == 'Linux':
-               self.wm_iconbitmap('@ico/dw_ico.xbm')
-        except tk.TclError:
-            logging.basicConfig(filename='warning.log',
-                                format='[%(asctime)s] %(levelname)s: %(message)s',
-                                level=logging.WARN)
-            logging.warning('dw_ico.xbm não foi encontrado na pasta ico.')
-        try:
-            if so == 'Windows':
-               self.wm_iconbitmap('ico\dw_ico.ico')
-        except tk.TclError:
-            logging.basicConfig(filename='warning.log',
-                                format='[%(asctime)s] %(levelname)s: %(message)s',
-                                level=logging.WARN)
-            logging.warning('dw_ico.ico não foi encontrado na pasta ico.')
-
     def tema_preto():
         self.config(bg=definir_cor.COR_PRETA)
         style = ttk.Style()
