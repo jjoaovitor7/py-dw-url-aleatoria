@@ -23,7 +23,7 @@ def mostrar_urls(self):
                         font=('Times New Roman', '14'))
 
     configurar_janela()
-    configurar_icone.configurar_icone()
+    configurar_icone.configurar_icone(self)
 
     tema_preto()
 
