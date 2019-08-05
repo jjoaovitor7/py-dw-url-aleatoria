@@ -7,31 +7,13 @@ import logging
 import sqlite3
 
 import definir_cor
+import configurar_icone
 import ajuda_redes
 
 
 def mostrar_urls(self):
     def configurar_janela():
         self.title('URLs')
-
-    def configurar_icone():
-        so = platform.system()
-        try:
-            if so == 'Linux':
-               self.wm_iconbitmap('@ico/dw_ico.xbm')
-        except tk.TclError:
-            logging.basicConfig(filename='warning.log',
-                                format='[%(asctime)s] %(levelname)s: %(message)s',
-                                level=logging.WARN)
-            logging.warning('dw_ico.xbm não foi encontrado na pasta ico.')
-        try:
-            if so == 'Windows':
-               self.wm_iconbitmap('ico\dw_ico.ico')
-        except tk.TclError:
-            logging.basicConfig(filename='warning.log',
-                                format='[%(asctime)s] %(levelname)s: %(message)s',
-                                level=logging.WARN)
-            logging.warning('dw_ico.ico não foi encontrado na pasta ico.')
 
     def tema_preto():
         self.config(bg=definir_cor.COR_PRETA)
@@ -41,7 +23,7 @@ def mostrar_urls(self):
                         font=('Times New Roman', '14'))
 
     configurar_janela()
-    configurar_icone()
+    configurar_icone.configurar_icone()
 
     tema_preto()
 
