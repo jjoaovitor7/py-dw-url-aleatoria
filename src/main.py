@@ -8,6 +8,7 @@ import sqlite3
 import webbrowser
 
 import definir_cor
+import configurar_icone
 import mostrar_urls
 import ajuda_redes
 
@@ -39,6 +40,7 @@ def main(self):
                         width=5, relief=tk.RAISED)
 
     configurar_janela()
+    configurar_icone.configurar_icone(self)
     configurar_icone()
 
     tema_preto()
