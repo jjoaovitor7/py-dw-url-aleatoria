@@ -7,6 +7,7 @@ import logging
 import sqlite3
 
 import definir_cor
+import configurar_icone
 import mostrar_urls
 
 
