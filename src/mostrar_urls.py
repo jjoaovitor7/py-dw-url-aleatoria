@@ -8,7 +8,6 @@ import sqlite3
 
 import definir_cor
 import configurar_icone
-import ajuda_redes
 
 
 def mostrar_urls(self):
