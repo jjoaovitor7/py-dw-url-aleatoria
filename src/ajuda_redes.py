@@ -8,48 +8,53 @@ import sqlite3
 
 import definir_cor
 import configurar_icone
-import mostrar_urls
 
 
 def ajuda_redes(self):
-    def configurar_janela():
+    def setTitle():
         self.title('Redes')
 
-    def tema_preto():
+
+    def blackTheme():
         self.config(bg=definir_cor.COR_PRETA)
         style = ttk.Style()
         style.configure('redes.TLabel', background=definir_cor.COR_PRETA,
                         foreground=definir_cor.COR_VERDE_CLARO,
                         font=('Times New Roman', '14'))
 
-    configurar_janela()
-    configurar_icone.configurar_icone(self)
 
-    tema_preto()
+    def setWidgets():
+        #Rede Onion (.onion)
+        l_onion = ttk.Label(self,
+                            text='Onion: https://www.torproject.org/download',
+                            style='redes.TLabel').grid(row=0, column=0,
+                            sticky=tk.W)
 
-    menubar = tk.Menu(self)
-    self.config(menu=menubar)
+        #Rede i2p (.i2p)
+        l_i2p = ttk.Label(self,
+                          text='i2p: https://geti2p.net/pt-br/download',
+                          style='redes.TLabel').grid(row=1, column=0,
+                          sticky=tk.W)
 
-    ajuda = tk.Menu(menubar, tearoff=0)
-    menubar.add_cascade(label='Ajuda', menu=ajuda)
-    ajuda.add_command(label='URLs', command=mostrar_urls.run)
-
-    l_onion = ttk.Label(self,
-                        text='Onion: https://www.torproject.org/download',
-                        style='redes.TLabel')
-    l_i2p = ttk.Label(self,
-                      text='i2p: https://geti2p.net/pt-br/download',
-                      style='redes.TLabel')
-    l_freenet = ttk.Label(self,
+        #Rede Freenet
+        l_freenet = ttk.Label(self,
                           text='Freenet: https://freenetproject.org',
-                          style='redes.TLabel')
+                          style='redes.TLabel').grid(row=2, column=0,
+                          sticky=tk.W)
 
-    l_onion.grid(row=0, column=0, sticky=tk.W)
-    l_i2p.grid(row=1, column=0, sticky=tk.W)
-    l_freenet.grid(row=2, column=0, sticky=tk.W)
+
+    setTitle()
+    configurar_icone.configurar_icone(self)
+    blackTheme()
+
+    setWidgets()
 
 
 def run():
     root = tk.Toplevel()
     ajuda_redes(root)
     root.mainloop()
+
+
+#if __name__ == '__main__':
+    #run()
