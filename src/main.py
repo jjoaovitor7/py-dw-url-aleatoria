@@ -74,7 +74,8 @@ def main(self):
         titleLabel = ttk.Label(self, text='Deep Web URL Aleatória',
                                style='main.TLabel').grid(row=0, column=0)
 
-        urlLabel = ttk.Label(self, text='URL', style='main.TLabel')
+        urlLabel = ttk.Label(self, text='URL', style='main.TLabel',
+                             cursor='hand1')
         urlLabel.grid(row=1, column=0)
 
         def goButtonClicked():
